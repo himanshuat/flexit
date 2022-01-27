@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--font-clr);
+    background-color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    transition: all .2s ease-in;
+}
+
+a { text-decoration: none; }
+
+.light {
+    --primary: #F1F6F9;
+    --secondary: #D3E0EA;
+    --accent: #1A374D;
+    --font-clr: #232323;
+    --shadow: #6998AB;
+    --hover: #212121;
+}
+
+.dark {
+    --primary: #141C2F;
+    --secondary: #1F2A48;
+    --accent: #90EE90;
+    --font-clr: #FEFCF5;
+    --shadow: #8FD48F;
+    --hover: #FFFDF6;
+}
+
+.navbar {
+    padding: 1rem 1.5rem;
+    color: var(--accent);
+}
+
+.logo {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(2.5em, 6vw, 4em);
+    font-family: 'Fugaz One', cursive;
+    text-shadow: 2px 2px 5px var(--shadow);
+    letter-spacing: .5em;
+}
+
+#toggle-theme {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
+#toggle-theme i {
+    font-size: 2em;
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+#grid {
+    margin: 1rem;
+    display: grid;
+    min-height: 100vh;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+        "main main main main parent parent"
+        "main main main main parent parent"
+        "main main main main parent parent"
+        "main main main main parent parent"
+        "main main main main parent parent"
+        "main main main main child child"
+        "main main main main child child"
+        "btns btns btns btns child child";
+}
+
+#grid > * {
+    border: 2px solid var(--secondary);
+    padding: 1rem;
+}
+
+#main-container {
+    grid-area: main;
+    background-color: var(--primary);
+    max-height: 80vh;
+    overflow: scroll;
+}
+
+#flex-container { height: 100%; }
+
+.item {
+    margin: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 2em;
+    background-color: var(--secondary);
+    border: 2px solid var(--accent);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.accent {
+    color: var(--primary);
+    background-color: var(--accent);
+}
+
+.selected {
+    border: 2px solid var(--font-clr);
+    box-shadow: 1px 1px 10px var(--shadow);
+}
+
+#buttons {
+    grid-area: btns;
+    background-color: var(--primary);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.btn {
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: var(--primary);
+    background-color: var(--font-clr);
+    cursor: pointer;
+    transition: all .15s;
+    flex-grow: 1;
+    box-shadow: 0 0 10px var(--shadow);
+}
+
+.btn:hover {
+    background-color: var(--hover);
+    box-shadow: 1px 1px 12px var(--shadow);
+}
+
+.btn i { margin-right: 1rem; }
+
+#parent {
+    grid-area: parent;
+    background-color: var(--secondary);
+}
+
+h2 {
+    margin: 0;
+    grid-column: 1 / -1;
+}
+
+.properties {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+
+.property-item > * {
+    display: block;
+    width: 100%;
+    margin: .25rem 0;
+}
+
+.property-item select,
+.property-item input {
+    font-size: 1em;
+    padding: .25rem .5rem;
+    border-radius: 5px;
+    color: var(--font-clr);
+    background-color: var(--primary);
+    outline: none;
+}
+
+.property-item input { border: 1px solid darkgrey; }
+
+input::placeholder { font-size: .75em; }
+
+#child {
+    grid-area: child;
+    background-color: var(--accent);
+}
+
+h2 > p {
+    margin: 0;
+    font-size: .5em;
+    font-weight: 400;
+    opacity: .8;
+}
+
+.flex-shorthand { grid-column: 1 / -1; }
+
+#flex {
+    display: flex;
+    gap: .25em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#flex > * { width: 100%; }
+
+#flex label {
+    margin-top: .25rem;
+    font-size: .75rem;
+    opacity: .6;
+}
+
+#flex input{ width: 100%; }
+
+.footer {
+    padding: 2rem .5rem;
+    background-color: var(--secondary);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.footer p { margin: 0; }
+
+.footer p > a {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.social { margin-top: 1rem; }
+
+.social a {
+    margin: .5em;
+    font-size: 1.75em;
+    color: var(--font-clr);
+}
+
+.social a:hover { color: var(--accent); }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: .5em;
+    height: .5em;
+}
+
+::-webkit-scrollbar-track { background-color: var(--primary); }
+
+::-webkit-scrollbar-thumb { background: var(--accent); }
+
+/* Scroll bar for mozilla */
+@supports (scrollbar-color: var(--primary) var(--accent)) {
+    * {
+        scrollbar-color: var(--accent) var(--primary);
+        scrollbar-width: thin;
+    }
+}
+
+/* Media Queries */
+
+@media (min-width: 675px) and (max-width: 1000px) {
+    
+    #grid {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: 
+            "main main main main main main main"
+            "main main main main main main main"
+            "main main main main main main main"
+            "main main main main main main main"
+            "btns btns btns btns btns btns btns"
+            "parent parent parent parent child child child"
+            "parent parent parent parent child child child"
+            "parent parent parent parent child child child";
+    }
+
+    #main-container {
+        min-height: 50vh;
+        max-height: 60vh; 
+    }
+    
+    .item {
+        padding: 0.75rem 1.25rem;
+        font-size: 1.5em;
+    }
+
+    .properties { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+
+@media (max-width: 675px) {
+
+    .logo {
+        letter-spacing: .1rem;
+        text-align: left;
+    }
+
+    #toggle-theme i {
+        padding: .25em;
+        font-size: 1.5em;
+    }
+
+    #grid {
+        display: block;
+        min-height: 120vh;
+    }
+
+    #main-container { height: 50vh; }
+    
+    .item {
+        padding: 0.5rem 1rem;
+        font-size: 1.5em;
+    }
+
+    .btn i { margin: 0; }
+
+    span { display: none; }
+
+    .properties {
+        margin: 1rem 0;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .property-item select, 
+    .property-item input {
+        font-size: .75em;
+        padding: 0.15rem 0.35rem;
+    }
+}

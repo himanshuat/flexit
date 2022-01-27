@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <title>FLEXIT | Flexbox Playground</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <!-- Fonts: Fugaz One & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="logo">FLEXIT</h1>
+        <div id="toggle-theme"></div>
+    </nav>
+    <main id="grid">
+        <div id="main-container">
+            <div id="flex-container">
+                <div class="item" id="1">1</div>
+                <div class="item" id="2">2</div>
+                <div class="item selected accent" id="3">3</div>
+                <div class="item" id="4">4</div>
+            </div>
+        </div>
+        <div id="buttons">
+            <button class="btn" id="add-child"><i class="fas fa-plus"></i><span>Add Child</span></button>
+            <button class="btn" id="remove-child"><i class="fas fa-minus"></i><span>Remove Child</span></button>
+            <button class="btn" id="full-screen"><i class="fas fa-expand-arrows-alt"></i><span>Full
+                    Screen</span></button>
+
+        </div>
+        <div id="parent" class="properties">
+            <h2>Parent Styles</h2>
+            <div class="property-item">
+                <label for="display">display</label>
+                <select id="display">
+                    <option value="block">block [default]</option>
+                    <option value="flex">flex</option>
+                </select>
+            </div>
+            <div class="property-item">
+                <label for="align-content">align-content</label>
+                <select name="align-content" id="align-content">
+                    <option value="stretch">stretch [default]</option>
+                    <option value="center">center</option>
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                </select>
+            </div>
+            <div class="property-item">
+                <label for="align-items">align-items</label>
+                <select name="align-items" id="align-items">
+                    <option value="stretch">stretch [default]</option>
+                    <option value="center">center</option>
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="baseline">baseline</option>
+                </select>
+            </div>
+            <div class="property-item">
+                <label for="justify-content">justify-content</label>
+                <select name="justify-content" id="justify-content">
+                    <option value="flex-start">flex-start [default]</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                </select>
+            </div>
+            <div class="property-item">
+                <label for="flex-direction">flex-direction</label>
+                <select name="flex-direction" id="flex-direction">
+                    <option value="row">row [default]</option>
+                    <option value="row-reverse">row-reverse</option>
+                    <option value="column">column</option>
+                    <option value="column-reverse">column-reverse</option>
+                </select>
+            </div>
+            <div class="property-item">
+                <label for="flex-wrap">flex-wrap</label>
+                <select name="flex-wrap" id="flex-wrap">
+                    <option value="nowrap">nowrap [default]</option>
+                    <option value="wrap">wrap</option>
+                    <option value="wrap-reverse">wrap-reverse</option>
+                </select>
+            </div>
+        </div>
+        <div id="child" class="properties accent">
+            <h2>Child Styles<p>Click on any flex item to select it</p></h2>
+            
+            <div class="property-item">
+                <label for="align-self">align-self</label>
+                <select name="align-self" id="align-self">
+                    <option value="auto">auto [default]</option>
+                    <option value="stretch">stretch</option>
+                    <option value="center">center</option>
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="baseline">baseline</option>
+                </select>
+            </div>
+            <div class="property-item">
+                <label for="order">order</label>
+                <input type="number" id="order" placeholder="default: 0">
+            </div>
+            <div class="property-item flex-shorthand">
+                <label for="flex">flex</label>
+                <div id="flex">
+                    <div>
+                        <input type="number" id="flex-grow" placeholder="default: 0">
+                        <label for="flex-grow">flex-grow</label>
+                    </div>
+                    <div>
+                        <input type="number" id="flex-shrink" placeholder="default: 1">
+                        <label for="flex-shrink">flex-shrink</label>
+                    </div>
+                    <div>
+                        <input type="number" id="flex-basis" placeholder="default: auto">
+                        <label for="flex-basis">flex-basis</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Designed and made with love by <a href="https://github.com/himanshuat" target="_blank">Himanshu Tegyalwar</a></p>
+        <div class="social">
+            <a href="https://www.facebook.com/himanshu.tegyalwar" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/mr_smart_0846" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/himanshuat_" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/himanshu-tegyalwar" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+</body>
+
+</html>
