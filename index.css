@@ -37,7 +37,7 @@ a { text-decoration: none; }
 .logo {
     margin: 0;
     text-align: center;
-    font-size: clamp(2.5em, 6vw, 4em);
+    font-size: clamp(2.5em, 6vw, 4.5em);
     font-family: 'Fugaz One', cursive;
     text-shadow: 2px 2px 5px var(--shadow);
     letter-spacing: .5em;
@@ -248,6 +248,40 @@ h2 > p {
 }
 
 /* Media Queries */
+@media (min-width: 1250px) {
+
+    #grid {
+        min-height: 75vh;
+        max-height: 100vh;
+    }
+
+    #main-container {
+        max-height: 70vh;
+    }
+
+    .item {
+        margin: .65rem;
+        padding: 1rem 1.75rem;
+    }
+    
+    .btn {
+        padding: 1.3rem;
+        font-size: 1.15em;
+    }
+
+    .btn i { margin-right: 1.1rem; }
+
+    .properties {
+        grid-gap: 1.1rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1550px) {
+    body {
+        font-size: 24px;
+    }
+}
 
 @media (min-width: 675px) and (max-width: 1000px) {
     
