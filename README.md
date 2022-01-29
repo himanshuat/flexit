@@ -10,6 +10,7 @@ A CSS flexbox playground that visualizes the workflow of CSS flexbox
 - [Technologies Used](#technologies-used)
 - [Usage](#usage)
 - [What I learned?](#what-i-learned)
+- [Coming Soon](#coming-soon)
 
 ## Why Flexit?
 Flexit is built with an intension to help the beginners and some learners who face difficulty to understand the concept of flexbox. Flexit visualizes the working of flexbox and its behaviour when a certain property is applied or updated.
@@ -45,3 +46,10 @@ While working on this project I got to learn a lot new things.
 2. Switching Theme
 3. Opening window in fullscreen mode.
 4. Behaviour of ```this``` in regular functions and arrow functions.
+
+## Coming Soon
+- [ ] Code Generation
+- [ ] Tooltips for all properties
+- [ ] Undo/Redo actions
+- [ ] Render tips and tricks about Flexbox while loading
+- [ ] Render theme according to time
